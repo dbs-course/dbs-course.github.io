@@ -1,0 +1,15 @@
+- text: "Oznamy"
+  url: "/"
+
+- text: "Základné informácie"
+  url: "/info/"
+
+- text: "Prednášky"
+  url: "/lectures/"
+
+- text: "Cvičenia"
+  url: "/labs/"
+
+- text: "Projekt"
+  url: "/project/"
+

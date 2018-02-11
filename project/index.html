@@ -1,0 +1,324 @@
+---
+layout: dbs
+title:  "Projekt"
+---
+<div class="row">
+  <div id="sidebar" class="col-md-3 hidden-xs">
+    <ul class="well nav nav-pills nav-stacked affix">
+      <li class="active"><a href="#basic-info">Zadanie</a></li>
+      <li><a href="#schedule">Čo sa odovzdáva a kedy</a></li>
+      <li><a href="#application">Aplikácia</a></li>
+      <li><a href="#model">Dátový model</a></li>
+      <li><a href="#report">Analytický report</a></li>
+      <li><a href="#submission">Spôsob odovzdania</a></li>
+      <li><a href="#delayed-submission">Oneskorenie odovzdania</a></li>
+      <li><a href="#implementation">Implementačné prostredie</a></li>
+      <li><a href="#conditions">Čo sa hodnotí</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </div>
+  <div class="col-md-9 col-md-offset-0 col-sm-8 col-sm-offset-4">
+    <div id="basic-info" class="row">
+      <div class="col-md-9">
+        <h2>Projekt</h2>
+        <h3>Zadanie</h3>
+        <p>
+          Vo vami zvolenom prostredí vytvorte databázovú aplikáciu, <b>ktorá komplexne rieši nižšie definované
+          scenáre</b> vo vami zvolenej doméne. Presný rozsah a konkretizáciu scenárov si dohodnete s Vašim
+          cvičiacim na cvičení. Projekt sa rieši vo dvojiciach, pričom sa očakáva, že na synchronizáciu práce so spolužiakom / spolužiačkou použijete <a href="https://git-scm.com/">git</a>.
+        </p>
+      </div><!--/col-->
+    </div><!--/row-->
+    <div id="schedule" class="row">
+      <div class="col-md-9">
+        <h3>Čo sa odovzdáva a kedy</h3>
+        <ol>
+          <li>návrh dátového modelu + špecifikácia scenárov
+            <ul>
+              <li>nepovinný kontrolný bod,</li>
+              <li>za 0 bodov,</li>
+              <li>v 4tom týždni semestra,</li>
+              <li>s cieľom dať študentom spätnú väzbu</li>
+            </ul>
+          </li>
+          <li>implementovaný relačný model, naplnený údajmi spolu s analytickým reportom opisujúcim model a
+            dáta
+            <ul>
+              <li>povinný kontrolný bod</li>
+              <li>za 10 bodov</li>
+              <li>na konci 6teho týždňa (preberá sa na 7mom cvičení)</li>
+              <li>s cieľom mať hotové tabuľky, naplnené veľkým množstvom údajov (skoré zistenie neoptimálnej práce s db)
+              </li>
+            </ul>
+          </li>
+          <li>
+            implementovaný jeden funkčný scenár z navrhovanej aplikácie
+            <ul>
+              <li>nepovinný kontrolný bod,</li>
+              <li>za 4 body,</li>
+              <li>na konci 8meho týždňa (ideálne aj ukázať cvičiacemu počas cvičenia v 8mom týždni),</li>
+              <li>s cieľom odhaliť prípadné komplikácie a chyby včas pred finálnym odovzdaním</li>
+            </ul>
+          </li>
+          <li>
+            finálna verzia aplikácie s dokumentáciou
+            <ul>
+              <li>povinný kontrolný bod,</li>
+              <li>za 16 bodov,</li>
+              <li>na konci 10teho týždňa (zadania sa preberajú na 11tom a 12tom cvičení),</li>
+              <li>s cieľom prezentovať osvojenie si zručností práce s relačnou databázou</li>
+            </ul>
+          </li>
+        </ol>
+        <p>Bez odovzdania v druhom kontrolnom bode, ktoré je cvičiacim akceptované a spĺňa minimálnu úroveň
+          kvality, sa nedá odovzdať projekt v štvrtom kontrolnom bode.</p>
+        <p>Pre získanie zápočtu je potrebné odovzdať (a cvičiaci musí akceptovať minimálnu úroveň kvality)
+          obidva povinné kontrolné body projektu.</p>
+      </div><!--/col-->
+    </div><!--/row-->
+    <div id="application" class="row">
+      <div class="col-md-9">
+        <h3>Aplikácia</h3>
+        <p>
+          V poslednom kontrolnom bode musí aplikácia
+          realizovať tieto všeobecné scenáre (a podscenáre):
+        </p>
+        <ul>
+          <li>Zobrazenie prehľadu všetkých záznamov (rozumne stránkovaných, ak je to potrebné), kde v každom
+            riadku figuruje aspoň jedno číslo, pre ktorého výpočet sa využíva GROUP BY (malo by ísť o vybranú relevantnú doménovú štatistiku),
+          </li>
+          <ul>
+            <li>rozširujúci podscenár: Filtrovanie záznamov spĺňajúcich určité kritériá zadané používateľom.</li>
+          </ul>
+          <li>Zobrazenie konkrétneho záznamu - detail,</li>
+          <li>Vytvorenie nového záznamu,</li>
+          <li>Aktualizácia existujúceho záznamu,</li>
+          <li>Vymazanie záznamu.</li>
+        </ul>
+        </p>
+
+        <p>
+          Aplikácia musí mať grafické rozhranie (aplikácia <b>nemôže</b> byť realizovaná ako konzolová). Je dôležité
+          aby scenáre boli realizované realisticky - teda aby aplikácia (a teda aj jej používateľské
+          rozhranie) naozaj poskytovala časť funkcionality tak, ako by ju očakával zákazník v danej doméne
+          (napr. namiesto zadavania ID záznamu do modálneho okna si záznam vyberiem kliknutím v tabuľke).</p>
+
+        <p>
+          Scenáre, ktoré menia dáta musia byť realizované <b>s použitím transakcií</b> (explicitné transakcie,
+          autocommit) a aspoň jeden z nich musí zahŕňať <b>prácu s viacerými tabuľkami</b> (typicky vytvorenie
+          záznamu a naviazanie cudzieho kľúča).
+        </p>
+
+        <p>
+          Prácu vo dvojici si musíte rozvrhnúť tak, aby každý z dvojice pracoval na všetkých vrstvách aplikácie (a teda každý programoval aj časť, ktorá interaguje s databázou). 
+          Delenie, kde jeden z dvojice robí frontend a druhý backend <b>nie</b> je povolené.
+        </p>
+      </div><!--/col-->
+    </div><!--/row-->
+    <div id="model" class="row">
+      <div class="col-md-9">
+        <h3>Dátový model</h3>
+        <p>Logický dátový model musí obsahovať min. 7 tabuliek, bez uvažovania číselníkov. Neodporúčame viac ako
+          9 takýchto tabuliek.</p>
+        <p>
+          V druhom kontrolnom bode semestra sa odovzdáva dátový model implementovaný v databáze (SQL DDL), s tabuľkami,
+          ktoré sú naplnené dátami
+        <ul>
+          <li>rádovo milióny riadkov v každej tabuľke okrem číselníkov, kde to nedáva zmysel z pohľadu domény</li>
+          <li>
+            Je nám jedno ako ich vygenerujete, ale musí to pôsobiť realisticky
+            <ul>
+              <li>
+                Existujú online generátory
+              </li>
+              <li>
+                Rôzne tooly, napr. <a href="https://github.com/joke2k/faker">faker</a>
+              </li>
+              <li>
+                A samotný postgres vie tiež
+                <a href="https://www.postgresql.org/docs/current/static/functions-srf.html">generovať dáta</a>,
+              </li>
+            </ul>
+          </li>
+          <li>Aspoň jedna tabuľka musí obsahovať rádovo desiatky miliónov záznamov a musí to byť tabuľka s ktorou sa pracuje v
+            scenári, kde sa filtrujú dáta
+          </li>
+        </ul>
+        </p>
+      </div><!--/col-->
+    </div><!--/row-->
+    <div id="report" class="row">
+      <div class="col-md-9">
+        <h3>Analytický report</h3>
+        <p>
+          V druhom kontrolnom bode semestra sa odovzdáva aj analytický report, ktorý opisuje dáta jednotlivých tabuliek.
+          Je to dokument, ktorý obsahuje pre každú tabuľku:
+        <ul>
+          <li>Stručný opis spôsobu, akým boli vygenerované dáta</li>
+          <li>Počet riadkov</li>
+          <li>Pre každý doménový numerický atribút sumarizáciu min, max, avg, dolný kvartil, medián, horný kvartil</li>
+          <li>Pre každý nominálny atribút početnosti jednotlivých hodnôt. Pri veľkom počte rôznych hodnôt stačí počet rôznych hodnôť (typicky pri cudzích kľúčoch)</li>
+          <li>Minimálne pre jednu tabuľku aj s uvedením postupu (SQL), akým sa študenti k daným číslam dopracovali.</li>
+        </ul>
+        </p>
+        <p>
+          Cieľom reportu je okrem zdokumentovania dátového modelu a precvičenia si SQL aj poskytnúť cvičiacemu rýchly prehľad o tom, ako a s akým výsledkom ste dáta nagenerovali.
+        </p>
+      </div><!--/col-->
+    </div><!--/row-->
+    <div id="submission" class="row">
+      <div class="col-md-9">
+        <h3>Spôsob odovzdávania</h3>
+        <p>
+          Výstupy všetkých checkpointov sa odovzdávajú do GitHubu a do AISu. Data dump databázy sa neodovzdáva, iba
+          schéma, resp. DDL príkazy, ktorými sa vytvára.
+        </p>
+        <h4>GitHub</h4>
+        <p>Odovzdávať budete do repozitárov, ktoré si vytvoríte návštevou odkazu, ktorý vám pride mailom počas
+          semestra.</p>
+        <p>
+          Každú etapu študenti vypracovávajú do samostatnej vetvy, pomenovanej podľa čísla kontrolného bodu semestra
+          a pri odovzdávaní otvárajú pull request voči master vetve.
+          Po predvedení a akceptovaní zadania cvičiacim sa pull request merguje do master vetvy a zatvára.
+        </p>
+        <p>
+          Štruktúra git úložika:
+        <ul>
+          <li><code>Readme.md</code> súbor v roote, ktorý obsahuje údaje o vás a o projekte - najmä vaše celé mená</li>
+          <li>zdrojové súbory v adresári <code>src</code></li>
+          <li>dokumentácia vo formáte <a href="https://guides.github.com/features/mastering-markdown/">Markdown</a> v adresári <code>doc</code></li>
+          <li>SQL skripty pre vytvorenie tabuliek v adresári <code>schema</code></li>
+          <li>voliteľne skripty pre generovanie dát, ak existujú, v adresári <code>data</code></li>
+        </ul>
+        </p>
+        <h4>Prečo Git a GitHub?</h4>
+        <p>
+          Pretože takto dokážete v dvojici spolupracovať efektívne a my budeme zároveň vedieť odlíšiť príspevok jednotlivých študentov z dvojice.
+          Pretože takto dokážeme skontrolovať vaše zadania rýchlejšie a pohodlnejšie.
+          Vieme Vám pomôcť a konzultovať priebežne, ak aj vy budete robiť a commitovať priebežne.
+        </p>
+        <h4>AIS</h4>
+        <p>Pretože pre účely archivácie to potrebujeme mať aj tu...</p>
+        <p>
+          Odovzdáva sa ZIP (a nie RAR) archív so všetkými zdrojovými kódmi a dokumentáciou.
+        </p>
+        <p>
+          <b>Každý odovzdaný archív musí obsahovať textový súbor, ktorého <b>názov</b> tvorí SHA1
+            digest posledného commitu, ktorý sa má uvažovať pre danú etapu. Súbor musí obsahovať <b>URL (odkaz) na tento commit na GitHube</b>.
+        <ul>
+          <li>
+            Keďže miesto odovzdania sa uzatvára uplynutím 23:59, v praxi to znamená, že do gitu musíte commitnúť nejaký
+            čas predtým,
+            aby ste do zipu stihli pripraviť súbor s digestom tohto commitu. Odporúčame preto, aby ste si nastavili v
+            hlave deadline <b>najneskôr</b> na 23:50.
+          </li>
+        </ul>
+        </p>
+        <p>
+          Okrem toho sa v ZIPe musí nachádzať obsah git repozitára z daného commitu, v rovnakej štruktúre ako je uvedené vyššie.
+        </p>
+        <p>
+          V odovzdanom ZIPe nech sa nenachádzajú skompilované binárky, bytecode a pod.
+        </p>
+      </div><!--/col-->
+    </div><!--/row-->
+    <div id="delayed-submission" class="row">
+      <div class="col-md-9">
+        <h3>Oneskorenie odovzdania</h3>
+        <p>Pri povinných kontrolných bodoch sa môže odovzdanie oneskoriť maximálne o 3 dni s penalizáciou 1/4 bodov
+          za každý začatý deň oneskorenia (teda deň po termíne študent získa
+          3/4 bodov, ktoré by získal, ak by odovzdal včas. Dva dni po termíne 1/2 bodov, tri dni po termíne iba 1/4
+          bodov).</p>
+
+        <p>Neskoršie odovzdanie nie je umožnené. Neodovzdanie povinného míľniku
+          projektu znamená automatické nesplnenie podmienok absolvovania predmetu.</p>
+
+        <p>Zmeškanie nepovinného kontrolného bodu č. 3 znamená stratu bodov za tento kontrolný bod, nemá však vplyv na
+          ďalšie hodnotenie. Pri tomto kontrolnom bode nie je umožnené
+          oneskorené odovzdanie - ak to nestihnete dať do AISu, tak ste stratili body za tento kontrolný bod, ale môžete
+          ďalej pokračovať v predmete.</p>
+      </div><!--/col-->
+    </div><!--/row-->
+    <div id="implementation" class="row">
+      <div class="col-md-9">
+        <h3>Implementačné prostredie</h3>
+        <p>Oficiálne podporovaným implementačným prostredím je JAVA s databázovým serverom PostgreSQL. Použitie
+          iného prostredia je podmienené súhlasom cvičiaceho, pričom sa očakáva, že študent má s daným
+          prostredím predchádzajúce skúsenosti (nie je vhodné sa v rámci predmetu DBS učiť nový jazyk).</p>
+        <p><b>V prípade, že sa študent rozhodne aplikáciu vyvíjať ako webovú, je bezpodmienečne nutné vyvíjať
+          nad niektorým webovým frameworkom.</b></p>
+      </div><!--/col-->
+    </div><!--/row-->
+    <div id="conditions" class="row">
+      <div class="col-md-9">
+        <h3>Čo sa hodnotí</h3>
+        <p>Vytvorením aplikácie preukazujete osvojenie si praktických zručností pri práci s databázou.</p>
+        <p>Hodnotí sa:</p>
+        <ul>
+          <li>Návrh dátového modelu</li>
+          <li>Implementácia dátového modelu (fyzický dátový model)</li>
+          <ul>
+            <li>Ten musí byť úplný</li>
+          </ul>
+          <li>Funkčnosť aplikácie (teda dohodnutých scenárov)</li>
+          <li>Efektívne využívanie relačnej databázy/jazyka SQL</li>
+          <ul>
+            <li>V aplikácii musíte použiť JOIN (všade kde je to vhodné, aspoň raz to vhodné musí byť)</li>
+            <li>V aplikácii musíte použiť agregačnú funkciu</li>
+            <li>V aplikácii musíte použiť GROUP BY</li>
+          </ul>
+          <li>Prihliadať budeme aj na softvérový návrh aplikácie a ergonómiu používateľského rozhrania</li>
+        </ul>
+        <p>
+          Podrobnejší rozpis bodovania:
+        <ul>
+          <li>2. kontrolný bod (model s dátami + report)
+            <ul>
+              <li>Max 5 za model, jeho správnosť, kvalitu</li>
+              <li>Max 5 za dáta a report</li>
+            </ul>
+          </li>
+          <li>4. kontrolný bod (aplikácia)
+            <ul>
+              <li>Max 6 ak všetko funguje ako má</li>
+              <li>Max 3 za dokumentáciu</li>
+              <li>Max 7 za kvalitu - použiteľnosť, efektívnosť</li>
+            </ul>
+          </li>
+        </ul>
+        </p>
+      </div><!--/col-->
+    </div><!--/row-->
+    <div id="faq" class="row">
+      <div class="col-md-9">
+        <h3>FAQ</h3>
+        <div class="well">
+          <p>Q: Čo všetko má obsahovať dokumentácia?</p>
+          <p>A: Dokumentácia musí obsahovať minimálne tieto časti:</p>
+          <ol>
+            <li>Zadanie</li>
+            <li>špecifikáciu scenárov, ktoré aplikácia bude realizovať</li>
+            <li>diagram logického a fyzického dátového modelu spolu s ich opisom (vysvetlením)</li>
+            <li>stručný opis návrhu a implementácie
+              <ul>
+                <li>prog. prostredie
+                <li>návrhové rozhodnutia (napr. ako sa pristupuje k db, narába s connection)
+                <li>opis implementácie jednotlivých scenárov</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <div class="well">
+          <p>Q: Môžem riešiť projekt z PSI/TSS?</p>
+          <p>A: Áno</p>
+        </div>
+        <div class="well">
+          <p>Q: Projekt z PSI/TSS riešime dvaja. Môžeme obidvaja riešiť to isté aj na DBS?</p>
+          <p>A: Áno, ak ste spolu v dvojici aj na DBS. Ak na DBS nie ste spolu v dvojici (a teda by ste chceli túto tému riešiť dokopy štyria), musí každá dvojica riešiť scenáre nad inými časťami dátového modelu.</p>
+        </div>
+      </div><!--/col-->
+    </div><!--/row-->
+  </div> <!-- col-sm-10 -->
+</div> <!-- row -->
+

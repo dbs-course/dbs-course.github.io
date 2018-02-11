@@ -1,0 +1,10 @@
+body {
+  min-height: 2000px;
+  padding-top: 70px;
+}
+
+@media (min-width: 767px) {
+  .affix,.affix-top {
+      position:fixed;
+  }
+}

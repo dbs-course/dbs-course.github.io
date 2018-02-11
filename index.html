@@ -1,0 +1,25 @@
+---
+layout: dbs
+title: Oznamy
+---
+  {% for post in site.posts %}
+     {% if post.categories contains 'announcements' %}
+   <div class="row">
+     <div class="col-sm-6 col-sm-offset-2">
+       <h3>
+	{% if post.categories contains 'file' %}
+           <span class="glyphicon glyphicon-file"></span>
+        {% elsif post.categories contains 'lab-announcements' %}
+           <span class="glyphicon glyphicon-wrench"></span>
+        {% else %}
+           <span class="glyphicon glyphicon-comment"></span>
+        {% endif %}
+        {{post.title}}</h3>
+       <small class="pull-right">{{post.date | date_to_string}}</small>
+       <hr/>
+       {{post.content}}
+     </div>
+   </div>
+     {% endif %}
+ {% endfor %}
+
