@@ -9,7 +9,6 @@ title:  "Projekt"
       <li><a href="#schedule">Čo sa odovzdáva a kedy</a></li>
       <li><a href="#application">Aplikácia</a></li>
       <li><a href="#model">Dátový model</a></li>
-      <li><a href="#report">Analytický report</a></li>
       <li><a href="#submission">Spôsob odovzdania</a></li>
       <li><a href="#delayed-submission">Oneskorenie odovzdania</a></li>
       <li><a href="#implementation">Implementačné prostredie</a></li>
@@ -23,9 +22,7 @@ title:  "Projekt"
         <h2>Projekt</h2>
         <h3>Zadanie</h3>
         <p>
-          Vo vami zvolenom prostredí vytvorte databázovú aplikáciu, <b>ktorá komplexne rieši nižšie definované
-          scenáre</b> vo vami zvolenej doméne. Presný rozsah a konkretizáciu scenárov si dohodnete s Vašim
-          cvičiacim na cvičení. Projekt sa rieši vo dvojiciach, pričom sa očakáva, že na synchronizáciu práce so spolužiakom / spolužiačkou použijete <a href="https://git-scm.com/">git</a>.
+          Vo vami zvolenom prostredí vytvorte databázovú aplikáciu, <b>ktorá komplexne rieši päť vami zadefinovaných scenárov (prípadov použitia)</b> vo vami zvolenej doméne tak, aby ste demonštrovali využitie relačnej databázy podľa pokynov uvedených nižšie. Presný rozsah a konkretizáciu scenárov si dohodnete s Vašim cvičiacim na cvičení. Projekt sa rieši vo dvojiciach, pričom sa očakáva, že na synchronizáciu práce so spolužiakom / spolužiačkou použijete <a href="https://git-scm.com/">git</a>.
         </p>
       </div><!--/col-->
     </div><!--/row-->
@@ -33,55 +30,87 @@ title:  "Projekt"
       <div class="col-md-9">
         <h3>Čo sa odovzdáva a kedy</h3>
         <ol>
-          <li>návrh dátového modelu + špecifikácia scenárov
+          <li>Návrh témy
             <ul>
-              <li>nepovinný kontrolný bod,</li>
-              <li>za 0 bodov,</li>
-              <li>v 4tom týždni semestra,</li>
-              <li>s cieľom dať študentom spätnú väzbu</li>
+              <li>na konci prvého (1) týždňa semestra</li>
             </ul>
           </li>
-          <li>implementovaný relačný model, naplnený údajmi spolu s analytickým reportom opisujúcim model a
-            dáta
+          <li>Opis prvého scenára + diagram dátového modelu 
             <ul>
-              <li>povinný kontrolný bod</li>
-              <li>za 10 bodov</li>
-              <li>na konci 6teho týždňa (preberá sa na 7mom cvičení)</li>
-              <li>s cieľom mať hotové tabuľky, naplnené veľkým množstvom údajov (skoré zistenie neoptimálnej práce s db)
-              </li>
+              <li>obrazovky na papieri/wireframe/prototyp</li>
+              <li>1-3 tabuľky dátového modelu (papier, kreslitko)</li>
+              <li>na konci druhého (2) týždňa semestra</li>
             </ul>
           </li>
-          <li>
-            implementovaný jeden funkčný scenár z navrhovanej aplikácie
+          <li>Prvá implementácia obrazoviek, dátový model v SQL
             <ul>
-              <li>nepovinný kontrolný bod,</li>
-              <li>za 4 body,</li>
-              <li>na konci 8meho týždňa (ideálne aj ukázať cvičiacemu počas cvičenia v 8mom týždni),</li>
-              <li>s cieľom odhaliť prípadné komplikácie a chyby včas pred finálnym odovzdaním</li>
+              <li>zatiaľ bez db backendu</li>
+              <li>na konci tretieho (3) týždňa semestra</li>
+              <li>s cieľom odhaliť prípadné komplikácie súvisiace s nedatabázovou časťou projektu</li>
             </ul>
           </li>
-          <li>
-            finálna verzia aplikácie s dokumentáciou
+          <li>Kompletné vypracovanie prvého scenára, slovný opis druhého a tretieho scenára
             <ul>
-              <li>povinný kontrolný bod,</li>
-              <li>za 16 bodov,</li>
-              <li>na konci 10teho týždňa (zadania sa preberajú na 11tom a 12tom cvičení),</li>
-              <li>s cieľom prezentovať osvojenie si zručností práce s relačnou databázou</li>
+              <li><b>za 6 bodov</b></li>
+              <li>na konci piateho (5) týždňa semestra</li>
+              <li>odporúčame implementáciu konzultovať už aj v štvrtom týždni</li>
+              <li>s dokumentáciou v MarkDown pri kóde</li>
+            </ul>
+          </li>
+          <li>Obrazovky a dátový model pre druhý a tretí scenár
+            <ul>
+              <li>obrazovky na papieri/wireframe/prototyp</li>
+              <li>dátový model (papier, kreslítko)</li>
+              <li>na konci šiesteho (6) týždňa semestra</li>
+            </ul>
+          </li>
+          <li>Dátový model pre druhý a tretí scenár v SQL, naplnené dátami
+            <ul>
+              <li>obrazovky na papieri/wireframe/prototyp</li>
+              <li>dátový model (papier, kreslítko)</li>
+              <li>na konci siedmeho (7) týždňa semestra</li>
+            </ul>
+          </li>
+          <li>Kompletné vypracovanie druhého a tretieho scenára, slovný opis štvrtého a piateho scenára
+            <ul>
+              <li><b>za 12 bodov</b></li>
+              <li>na konci ôsmeho (8) týždňa semestra</li>
+              <li>s dokumentáciou v MarkDown pri kóde</li>
+            </ul>
+          </li>
+          <li>Obrazovky a dátový model pre štvrtý a piaty scenár
+            <ul>
+              <li>obrazovky na papieri/wireframe/prototyp</li>
+              <li>dátový model (papier, kreslítko)</li>
+              <li>na konci deviateho (9) týždňa semestra</li>
+            </ul>
+          </li>
+          <li>Dátový model pre štvrtý a piaty scenár v SQL, naplnené dátami
+            <ul>
+              <li>obrazovky na papieri/wireframe/prototyp</li>
+              <li>dátový model (papier, kreslítko)</li>
+              <li>na konci desiateho (10) týždňa semestra</li>
+            </ul>
+          </li>
+          <li>Kompletné vypracovanie štvrtého a piateho scenára
+            <ul>
+              <li><b>za 12 bodov</b></li>
+              <li>na konci jedenásteho (11) týždňa semestra</li>
+              <li>s dokumentáciou v MarkDown pri kóde</li>
             </ul>
           </li>
         </ol>
-        <p>Bez odovzdania v druhom kontrolnom bode, ktoré je cvičiacim akceptované a spĺňa minimálnu úroveň
-          kvality, sa nedá odovzdať projekt v štvrtom kontrolnom bode.</p>
+        <p>Bez odovzdania v bodovaných kontrolných termínov, ktoré je cvičiacim akceptované a spĺňa minimálnu úroveň
+          kvality, sa nedá pokračovať v práci na projekte.</p>
         <p>Pre získanie zápočtu je potrebné odovzdať (a cvičiaci musí akceptovať minimálnu úroveň kvality)
-          obidva povinné kontrolné body projektu.</p>
+          vo všetkých troch kontrolných termínoch.</p>
       </div><!--/col-->
     </div><!--/row-->
     <div id="application" class="row">
       <div class="col-md-9">
         <h3>Aplikácia</h3>
         <p>
-          V poslednom kontrolnom bode musí aplikácia
-          realizovať tieto všeobecné scenáre (a podscenáre):
+          Aplikácia musí priebežne realizovať tieto všeobecné scenáre (a podscenáre):
         </p>
         <ul>
           <li>Zobrazenie prehľadu všetkých záznamov (rozumne stránkovaných, ak je to potrebné), kde v každom
@@ -121,7 +150,7 @@ title:  "Projekt"
         <p>Logický dátový model musí obsahovať min. 7 tabuliek, bez uvažovania číselníkov. Neodporúčame viac ako
           9 takýchto tabuliek.</p>
         <p>
-          V druhom kontrolnom bode semestra sa odovzdáva dátový model implementovaný v databáze (SQL DDL), s tabuľkami,
+          V každom bodovanom kontrolnom termíne sa odovzdáva dátový model potrebný pre realizovanie doteraz riešených scenárov, implementovaný v databáze (SQL DDL), s tabuľkami,
           ktoré sú naplnené dátami
         <ul>
           <li>rádovo milióny riadkov v každej tabuľke okrem číselníkov, kde to nedáva zmysel z pohľadu domény</li>
@@ -140,29 +169,10 @@ title:  "Projekt"
               </li>
             </ul>
           </li>
-          <li>Aspoň jedna tabuľka musí obsahovať rádovo desiatky miliónov záznamov a musí to byť tabuľka s ktorou sa pracuje v
-            scenári, kde sa filtrujú dáta
+          <li>Aspoň jedna tabuľka musí obsahovať rádovo desiatky miliónov záznamov a musí to byť tabuľka s ktorou sa pracuje aj v
+            scenári, kde sa filtrujú dáta (motivácia je vyskúšať si v praxi ladenie výkonu)
           </li>
         </ul>
-        </p>
-      </div><!--/col-->
-    </div><!--/row-->
-    <div id="report" class="row">
-      <div class="col-md-9">
-        <h3>Analytický report</h3>
-        <p>
-          V druhom kontrolnom bode semestra sa odovzdáva aj analytický report, ktorý opisuje dáta jednotlivých tabuliek.
-          Je to dokument, ktorý obsahuje pre každú tabuľku:
-        <ul>
-          <li>Stručný opis spôsobu, akým boli vygenerované dáta</li>
-          <li>Počet riadkov</li>
-          <li>Pre každý doménový numerický atribút sumarizáciu min, max, avg, dolný kvartil, medián, horný kvartil</li>
-          <li>Pre každý nominálny atribút početnosti jednotlivých hodnôt. Pri veľkom počte rôznych hodnôt stačí počet rôznych hodnôť (typicky pri cudzích kľúčoch)</li>
-          <li>Minimálne pre jednu tabuľku aj s uvedením postupu (SQL), akým sa študenti k daným číslam dopracovali.</li>
-        </ul>
-        </p>
-        <p>
-          Cieľom reportu je okrem zdokumentovania dátového modelu a precvičenia si SQL aj poskytnúť cvičiacemu rýchly prehľad o tom, ako a s akým výsledkom ste dáta nagenerovali.
         </p>
       </div><!--/col-->
     </div><!--/row-->
@@ -203,8 +213,8 @@ title:  "Projekt"
           Odovzdáva sa ZIP (a nie RAR) archív so všetkými zdrojovými kódmi a dokumentáciou.
         </p>
         <p>
-          <b>Každý odovzdaný archív musí obsahovať textový súbor, ktorého <b>názov</b> tvorí SHA1
-            digest posledného commitu, ktorý sa má uvažovať pre danú etapu. Súbor musí obsahovať <b>URL (odkaz) na tento commit na GitHube</b>.
+          <b>Každý odovzdaný archív musí obsahovať textový súbor, ktorého názov tvorí SHA1
+            digest posledného commitu</b>, ktorý sa má uvažovať pre danú etapu. Súbor musí obsahovať <b>URL (odkaz) na tento commit na GitHube</b>.
         <ul>
           <li>
             Keďže miesto odovzdania sa uzatvára uplynutím 23:59, v praxi to znamená, že do gitu musíte commitnúť nejaký
@@ -232,11 +242,6 @@ title:  "Projekt"
 
         <p>Neskoršie odovzdanie nie je umožnené. Neodovzdanie povinného míľniku
           projektu znamená automatické nesplnenie podmienok absolvovania predmetu.</p>
-
-        <p>Zmeškanie nepovinného kontrolného bodu č. 3 znamená stratu bodov za tento kontrolný bod, nemá však vplyv na
-          ďalšie hodnotenie. Pri tomto kontrolnom bode nie je umožnené
-          oneskorené odovzdanie - ak to nestihnete dať do AISu, tak ste stratili body za tento kontrolný bod, ale môžete
-          ďalej pokračovať v predmete.</p>
       </div><!--/col-->
     </div><!--/row-->
     <div id="implementation" class="row">
@@ -272,17 +277,18 @@ title:  "Projekt"
         <p>
           Podrobnejší rozpis bodovania:
         <ul>
-          <li>2. kontrolný bod (model s dátami + report)
+          <li>1. kontrolný bod (Prvý scenár)
             <ul>
-              <li>Max 5 za model, jeho správnosť, kvalitu</li>
-              <li>Max 5 za dáta a report</li>
+              <li>Max 3 ak všetko funguje ako má</li>
+              <li>Max 1 za dokumentáciu</li>
+              <li>Max 2 za kvalitu - použiteľnosť, efektívnosť</li>
             </ul>
           </li>
-          <li>4. kontrolný bod (aplikácia)
+          <li>2 a 3. kontrolný bod (scenáre 2, 3 a 4,5)
             <ul>
               <li>Max 6 ak všetko funguje ako má</li>
-              <li>Max 3 za dokumentáciu</li>
-              <li>Max 7 za kvalitu - použiteľnosť, efektívnosť</li>
+              <li>Max 2 za dokumentáciu</li>
+              <li>Max 4 za kvalitu - použiteľnosť, efektívnosť</li>
             </ul>
           </li>
         </ul>
@@ -307,6 +313,7 @@ title:  "Projekt"
               </ul>
             </li>
           </ol>
+          <p>A: Predstavte si, ze by ste po niekom cudzom mali pokračovať v takomto type projektu a niečo doňho dorábať. Čo by ste o tom projekte chceli vedieť? To presne napíšte do tej dokumentácie.
         </div>
 
         <div class="well">

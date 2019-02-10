@@ -1,0 +1,334 @@
+# Sense extension
+#https://chrome.google.com/webstore/detail/sense-beta/lhjgkmllcaadmopgmanpapmpjgmfcfig?hl=en
+
+DELETE dbs_students
+POST dbs_students
+PUT dbs_students
+{
+    "mappings": {
+        "student": {
+            "properties": {
+                "name" : { "type": "keyword"},
+                "sex" : { "type": "keyword"},
+                "subjects" : {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
+
+POST dbs_students/student
+{
+    "name" : "Michal Priemerny",
+    "sex" : "M",
+    "subjects" : {
+        "dbs" : {
+            "2014" : 76
+        },
+        "psi" : {
+            "2013" : 32,
+            "2014" : 84
+        }
+    }
+}
+
+POST dbs_students/student
+{
+    "name" : "Zuzka Sikovna",
+    "sex" : "F",
+    "subjects" : {
+        "dbs" : {
+            "2013" : 97
+        },
+        "psi" : {
+            "2013" : 89
+        }
+    }
+}
+
+POST dbs_students/student
+{
+    "name" : "Andrea Pekna",
+    "sex" : "F",
+    "subjects" : {
+        "psi" : {
+            "2013" : 85
+        }
+    }
+}
+
+POST dbs_students/student
+{
+    "name" : "Jozko Vyborny",
+    "sex" : "M",
+    "subjects" : {
+        "dbs" : {
+            "2014" : 92
+        },
+        "psi" : {
+            "2014" : 96
+        },
+        "ui" : {
+        "2014" : 94
+         }
+     }
+}
+
+# daj mi vsetko
+GET dbs_students/student/_search
+{
+    "query" : { "match_all" : {}}
+}
+
+# daj mi iba dievcata
+GET dbs_students/student/_search
+{
+   "query": {
+      "term": {
+         "sex": "F"
+      }
+   }
+}
+
+
+#daj mi vsetkych, ktori mali dbs
+GET dbs_students/student/_search
+{
+   "query": {
+      "exists": {
+         "field": "subjects.dbs"
+      }
+   }
+}
+
+#daj mi vsetkych, ktori mali PSI v 2014
+GET dbs_students/student/_search
+{
+   "query": {
+      "exists": {
+         "field": "subjects.psi.2014"
+      }
+   }
+}
+
+#daj mi vsetkych, ktori mali PSI v 2014 a nemali PSI v 2013
+GET dbs_students/student/_search
+{
+   "query": {
+      "bool": {
+         "filter": {
+            "exists": {
+               "field": "subjects.psi.2014"
+            }
+         },
+         "must_not": {
+            "exists": {
+               "field": "subjects.psi.2013"
+            }
+         }
+      }
+   }
+}
+
+#daj mi vsetkych, ktori mali z DBS viac ako 80 bodov
+GET dbs_students/student/_search
+{
+   "query": {
+      "range": {
+         "subjects.dbs.2014": {
+            "from": 80
+         }
+      }
+   }
+}
+
+#teraz chcem priemer dbs.2014
+GET dbs_students/student/_search
+{
+    "query": {"match_all": {}},
+    "aggs" : {
+        "dbs_score" : {
+             "avg" : { "field" : "subjects.dbs.2014" } 
+        }
+    }
+}
+
+#a teraz by som rad histogram PSI 2013
+GET dbs_students/student/_search
+{
+    "aggs" : {
+        "dbs_score" : {
+             "range" : { 
+                 "field" : "subjects.psi.2013", 
+                 "ranges" : [
+                     {"to": 56},
+                     {"from": 56, "to": 65 },
+                     {"from": 65, "to": 74 },
+                     {"from": 74, "to": 83 },
+                     {"from": 83, "to": 92 },
+                     {"from": 92}
+                ]
+             } 
+        },
+        "dbs_average" : {
+             "avg" : { "field" : "subjects.psi.2013" } 
+        }
+    }
+}
+
+# vnaranie aggs
+GET dbs_students/student/_search
+{
+   "query": {
+      "match_all": {}
+   },
+   "aggs": {
+      "genders": {
+         "terms": {
+            "field": "sex"
+         },
+         "aggs": {
+            "dbs_score": {
+               "range": {
+                  "field": "subjects.psi.2013",
+                  "ranges": [
+                     {
+                        "to": 56
+                     },
+                     {
+                        "from": 56,
+                        "to": 65
+                     },
+                     {
+                        "from": 65,
+                        "to": 74
+                     },
+                     {
+                        "from": 74,
+                        "to": 83
+                     },
+                     {
+                        "from": 83,
+                        "to": 92
+                     },
+                     {
+                        "from": 92
+                     }
+                  ]
+               }
+            },
+            "dbs_average": {
+               "avg": {
+                  "field": "subjects.psi.2013"
+               }
+            }
+         }
+      }
+   }
+}
+
+# vnaranie aggs
+GET dbs_students/student/_search
+{
+   "query": {
+      "match_all": {}
+   },
+   "aggs": {
+      "genders": {
+         "terms": {
+            "field": "sex"
+         },
+         "aggs": {
+            "dbs_score": {
+               "range": {
+                  "field": "subjects.psi.2013",
+                  "ranges": [
+                     {
+                        "to": 56
+                     },
+                     {
+                        "from": 56,
+                        "to": 65
+                     },
+                     {
+                        "from": 65,
+                        "to": 74
+                     },
+                     {
+                        "from": 74,
+                        "to": 83
+                     },
+                     {
+                        "from": 83,
+                        "to": 92
+                     },
+                     {
+                        "from": 92
+                     }
+                  ]
+               }
+            },
+            "dbs_average": {
+               "avg": {
+                  "field": "subjects.psi.2013"
+               }
+            }
+         }
+      }
+   }
+}
+
+
+# aggs iba nad odfiltrovanymi
+GET dbs_students/student/_search
+{
+   "query": {
+      "exists": {
+         "field": "subjects.psi.2013"
+      }
+   },
+   "aggs": {
+      "genders": {
+         "terms": {
+            "field": "sex"
+         },
+         "aggs": {
+            "dbs_score": {
+               "range": {
+                  "field": "subjects.psi.2013",
+                  "ranges": [
+                     {
+                        "to": 56
+                     },
+                     {
+                        "from": 56,
+                        "to": 65
+                     },
+                     {
+                        "from": 65,
+                        "to": 74
+                     },
+                     {
+                        "from": 74,
+                        "to": 83
+                     },
+                     {
+                        "from": 83,
+                        "to": 92
+                     },
+                     {
+                        "from": 92
+                     }
+                  ]
+               }
+            },
+            "dbs_average": {
+               "avg": {
+                  "field": "subjects.psi.2013"
+               }
+            }
+         }
+      }
+   }
+}

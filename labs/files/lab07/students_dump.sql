@@ -1,0 +1,117 @@
+CREATE TABLE students(
+id serial PRIMARY KEY,
+name varchar(50),
+subjects_passed INT
+);
+
+INSERT INTO students(name, subjects_passed) VALUES
+('Digby Otis', 12),
+('Tansy Hayley', 11),
+('Harland Eldridge', 12),
+('Tracey Tyson', 11),
+('Raleigh Paterson', 10),
+('Nancy Brook', 9),
+('Ross Ness', 8),
+('Addyson Frank', 13),
+('Jackson Simms', 2),
+('Elissa Seabrooke', 13),
+('Fitzroy Randal', 10),
+('Rosemarie Short', 10),
+('Cleve London', 9),
+('Liz Kynaston', 15),
+('Richard Myles', 7),
+('Annmarie Larson', 8),
+('Dean Michael', 15),
+('Davina Otis', 6),
+('Inigo Watt', 11),
+('Gabrielle Mottershead', 12);
+
+
+CREATE TABLE tests(
+id serial PRIMARY KEY,
+happened_at date,
+test_type varchar(30)
+);
+
+INSERT INTO tests(happened_at, test_type) VALUES
+('2016-06-06', 'exam'),
+('2016-05-01', 'semester'),
+('2016-05-07', 'semester'),
+('2016-05-14', 'semester');
+
+
+CREATE TABLE students_in_tests(
+id serial,
+test_id bigint references tests(id),
+student_id bigint references students(id),
+points float
+);
+
+INSERT INTO students_in_tests(test_id, student_id, points) VALUES
+(1,1,30),
+(1,2,22),
+(1,3,37),
+(1,4,28),
+(1,7,30),
+(1,10,39),
+(1,11,36),
+(1,12,26),
+(1,13,38),
+(1,14,34),
+(1,15,36),
+(1,16,33),
+(1,17,32),
+(1,18,25),
+(1,19,30),
+(1,20,18),
+(2,1,30),
+(2,2,22),
+(2,3,37),
+(2,4,28),
+(2,5,34),
+(2,6,32),
+(2,8,34),
+(2,10,39),
+(2,11,36),
+(2,14,34),
+(2,15,36),
+(2,17,32),
+(2,18,25),
+(2,19,30),
+(2,20,18),
+(3,1,30),
+(3,2,22),
+(3,3,37),
+(3,4,28),
+(3,5,34),
+(3,6,32),
+(3,8,34),
+(3,10,39),
+(3,11,36),
+(3,12,26),
+(3,13,38),
+(3,14,34),
+(3,15,36),
+(3,16,33),
+(3,17,32),
+(3,18,25),
+(3,19,30),
+(3,20,18),
+(4,1,30),
+(4,2,22),
+(4,3,37),
+(4,4,28),
+(4,5,34),
+(4,6,32),
+(4,8,34),
+(4,10,39),
+(4,11,36),
+(4,12,26),
+(4,13,38),
+(4,14,34),
+(4,15,36),
+(4,16,33),
+(4,17,32),
+(4,18,25),
+(4,19,30),
+(4,20,18);
