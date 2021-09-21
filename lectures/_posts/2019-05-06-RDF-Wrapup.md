@@ -4,6 +4,7 @@ categories: lectures
 title: RDF & Wrap-up
 anchor: rdf
 order: 12
+published: false
 ---
 ## Dvanásta prednáška (RDF, Wrap-up)
 

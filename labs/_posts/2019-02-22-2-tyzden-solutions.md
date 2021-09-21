@@ -3,7 +3,7 @@ layout: dbs
 categories: labs
 title: 2. týždeň - riešenia
 date: 2019-02-22
-published: true
+published: false
 ---
 
 ## Cvičenia v druhom týždni

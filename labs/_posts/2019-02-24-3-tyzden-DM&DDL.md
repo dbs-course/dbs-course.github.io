@@ -2,7 +2,7 @@
 layout: dbs
 categories: labs
 title: 3. týždeň - DDL
-published: true
+published: false
 ---
 # Cvičenia v treťom týždni
 

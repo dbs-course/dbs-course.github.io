@@ -3,6 +3,7 @@ layout: dbs
 categories: lectures
 anchor: intro
 order: 1
+published: false
 ---
 ## Prvá prednáška (Intro & Data Modeling)
 

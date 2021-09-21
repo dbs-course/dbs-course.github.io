@@ -4,6 +4,7 @@ categories: lectures
 anchor: window-functions
 title: Window functions + CTE + PostGIS
 order: 9
+published: false
 ---
 ## Deviata prednáška (Window Functions, WITH, PostGIS)
 

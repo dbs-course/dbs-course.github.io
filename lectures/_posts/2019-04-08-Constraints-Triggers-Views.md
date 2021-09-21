@@ -3,6 +3,7 @@ layout: dbs
 categories: lectures
 anchor: constraints-triggers
 order: 8
+published: false
 ---
 ## Osma prednáška (Obmedzenia, Spúšťače, Pohľady)
 

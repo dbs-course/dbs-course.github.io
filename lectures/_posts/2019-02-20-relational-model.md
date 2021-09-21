@@ -3,7 +3,7 @@ layout: dbs
 categories: lectures
 anchor: relational-data-model
 order: 2
-published: true
+published: false
 ---
 ## Druhá prednáška (Relačný model)
 

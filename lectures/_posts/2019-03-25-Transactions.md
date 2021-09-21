@@ -3,7 +3,7 @@ layout: dbs
 categories: lectures
 anchor: transactions
 order: 6
-published: true
+published: false
 ---
 ## Šiesta prednáška (Transakcie)
 
