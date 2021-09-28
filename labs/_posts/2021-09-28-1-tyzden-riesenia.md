@@ -1,12 +1,12 @@
 ---
 layout: dbs
 categories: labs
-title: 2. týždeň - riešenia
-date: 2019-02-22
-published: false
+title: 1. týždeň - riešenia
+date: 2021-09-28
+published: true
 ---
 
-## Cvičenia v druhom týždni
+## Cvičenia v prvom týždni - riešenia
 
 ### Dátové modelovanie #1 - Kardinality
 
