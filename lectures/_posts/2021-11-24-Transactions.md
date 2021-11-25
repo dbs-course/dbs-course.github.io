@@ -14,4 +14,4 @@ Prešli sme si ACID vlastnosti relačných databáz a transakcie ako nástroj na
 * Izolácia - napriek tomu, že vykonávanie transakcií môže byť vykonané paralelne, výsledok musí byť taký, ako keby boli vykonávané izolovane/sekvenčne
 * Trvácnosť dát - dáta sú chránené voči zlyhaniam, výpadkom
 
-[slajdy k Transakciám [pdf]](/lectures/files/07_Transactions.pdf)
+[slajdy k Transakciám [pdf]](/lectures/files/08_Transactions.pdf)
