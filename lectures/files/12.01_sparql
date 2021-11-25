@@ -1,7 +1,0 @@
-https://dbpedia.org/sparql
-
-SELECT DISTINCT ?film_title
-WHERE {
-?film_title rdf:type dbo:Film .
-?film_title dbo:director dbr:Terry_Jones
-}
