@@ -15,7 +15,7 @@ published: true
   * vieme nimi implementovať obmedzenia
   * ale aj oveľa viac...ale neprehánať
 * [slajdy [pdf]](/lectures/files/09_Constraints_Triggers.pdf)
-* [sql (Postgres)](/lectures/files/09_Constraints-Triggers-Postgres)
-* [sql (MySQL)](/lectures/files/09_Constraints-Triggers-Mysql)
+* [sql (Postgres)](/lectures/files/09_Constraints-Triggers-Postgres.sql)
+* [sql (MySQL)](/lectures/files/09_Constraints-Triggers-Mysql.sql)
 
 
