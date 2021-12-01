@@ -3,7 +3,7 @@ layout: dbs
 categories: lectures
 anchor: constraints-triggers
 order: 9
-published: false
+published: true
 ---
 ## Deviata prednáška (Obmedzenia, Spúšťače)
 
